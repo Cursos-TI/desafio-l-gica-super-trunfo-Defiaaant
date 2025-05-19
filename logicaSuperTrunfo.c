@@ -1,7 +1,8 @@
 #include <stdio.h>
 
 int main() {
-    //código reciclado dos trabalhos anteriores
+
+    //código reutilizado do trabalho anterior
     unsigned long int populacao, populacao2;
     int ponto_, ponto_2;
     int cidade, city;
@@ -17,13 +18,13 @@ int main() {
     float demo, demo2;
     float valor1, valor2, valor3, valor4;
 
-    //Estrutura dos projetos anteriores
+    //Estrutura dos projetos anteriores com mensagem introdutória
     printf ("Bem vindo ao Super Trunfo! \n");
     printf ("Neste jogo, teremos que cadastrar cartas de cidades com suas informações e atributos.\n");
     printf ("Em seguida faremos uma comparação das cartas com base nos atributos apresentados.\n");
     printf ("Agora vamos cadastrar duas cartas. \n");
     
-    //início da coleta de dados
+    //início da coleta de dados para a primeira carta
     printf("Primeiro, escolha uma letra de A até H, ela definirá o seu estado: \n");
     scanf("%s", &estado);
     printf("Escolha também um número de 1 até 4, ele definirá o código da sua cidade \n");
@@ -42,6 +43,7 @@ int main() {
     printf ("Finalizamos a primeira carta! Agora vamos criar a segunda. \n");
     printf(" \n");
     
+    //início da coleta de dados para a segunda carta
     printf("Primeiro, escolha uma letra de A até H, ela definirá o seu estado: \n");
     scanf("%s", &state);
     printf("Escolha também um número de 1 até 4, ele definirá o código da sua cidade \n");
@@ -69,15 +71,15 @@ int main() {
     printf("População: %lu habitantes \n", populacao);
     printf("Quantidade de pontos turísticos: %d \n", ponto_);
     printf("Área da cidade: %.2f Km² \n", area);
-    printf("PIB da cidade: %.3f bilhões de reais \n", PIB);
+    printf("PIB da cidade: %.4f bilhões de reais \n", PIB);
     
-    demo = populacao / area;
+    demo = populacao / area; //Cálculo da densidade demográfica
     
-    printf("Densidade demográfica da cidade: %.3f habitantes por Km² \n", demo);
+    printf("Densidade demográfica da cidade: %.4f habitantes por Km² \n", demo);
     
-    pib_ = (PIB*1000000000  / populacao);
+    pib_ = (PIB*1000000000  / populacao); //Cálculo do pib per Capita
         
-    printf("PIB Per Capita da cidade: %.3f reais \n", pib_);
+    printf("PIB Per Capita da cidade: %.4f reais \n", pib_);
     printf("========================================================\n");
     printf(" \n");
     printf("======================================\n");
@@ -88,15 +90,15 @@ int main() {
     printf("População: %lu habitantes \n", populacao2);
     printf("Quantidade de pontos turísticos: %d \n", ponto_2);
     printf("Área da cidade: %.2f Km² \n", area2);
-    printf("PIB da cidade: %.3f bilhões de reais \n", PIB2);
+    printf("PIB da cidade: %.4f bilhões de reais \n", PIB2);
     
-    demo2 =  populacao2 / area2;
+    demo2 =  populacao2 / area2; //Cálculo da densidade demográfica
         
-    printf("Densidade demográfica da cidade: %.3f habitantes por Km² \n", demo2);
+    printf("Densidade demográfica da cidade: %.4f habitantes por Km² \n", demo2);
     
-    pib_2 = (PIB2*1000000000 / populacao2);
+    pib_2 = (PIB2*1000000000 / populacao2); //Cálculo do pib per Capita
         
-    printf("PIB Per Capita da cidade: %.3f reais \n", pib_2);
+    printf("PIB Per Capita da cidade: %.4f reais \n", pib_2);
     printf("=========================================================\n");
     printf(" \n");
     
@@ -188,7 +190,7 @@ int main() {
         break;
     } 
 
-    //exibição final das comparações ocorridas
+    //ubstituição dos valores das variáveis de comparação
     switch (escolha2)
     {
     case 1:
@@ -228,14 +230,16 @@ int main() {
     printf("Carta %s%d - %s \n", estado, cidade, nome);
     printf("Carta %s%d - %s \n", state, city, nome_);
     
+    //Operadores lógicos para definir os vencedores
     condicao = valor1 > valor2 ? 1 : 0;
     valor3 == demo ? (condicao2 = valor3 < valor4 ? 1: 0) : (condicao2 = valor3 > valor4 ? 1: 0);
     
     printf("Atributos escolhidos: %s e %s\n", delta, delta2);
-    printf("Valores da 1º carta: %.3f // %.3f \n", valor1, valor3);
-    printf("Valores da 2º carta: %.3f // %.3f \n", valor2, valor4);
+    printf("Valores da 1º carta: %.4f // %.4f \n", valor1, valor3);
+    printf("Valores da 2º carta: %.4f // %.4f \n", valor2, valor4);
 
-    if (condicao == 1)
+    //Estrutura para a análise de vencedores
+    if (condicao == 1) //Caso verdadeiro para a primeira comparação
     {
         printf("%s vanceu a primeira comparação (%s).\n", nome, delta);
     } else if (condicao ==0)
@@ -244,7 +248,7 @@ int main() {
     } else{
         printf("Houve um empate na primeira comparação (%s).\n", delta);
     }
-    if (condicao2 == 1)
+    if (condicao2 == 1) //Caso verdadeiro para a segunda comparação
     {
         printf("%s vanceu a segunda comparação (%s).\n", nome, delta2);
     } else if (condicao2 ==0)
@@ -254,6 +258,7 @@ int main() {
         printf("Houve um empate na segunda comparação (%s).\n", delta2);
     }
 
+    //Estrutura de soma de valores e atribuição de vencedores
     printf("Soma dos valores das cartas:\n");
     printf("%.2f  //  %.2f \n", (valor1 + valor3), (valor2 + valor4));
 
@@ -277,5 +282,6 @@ int main() {
     }
 
     printf("================================================ \n");
+    //Fim da exibição
     return 0;
 }
